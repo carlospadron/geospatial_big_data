@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install PostgreSQL client and other necessary packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    bzip2 \
+    gdal-bin \
+    unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
