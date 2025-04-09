@@ -13,10 +13,11 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the bash script into the container
-COPY get_data.sh /usr/local/bin/get_data.sh
+COPY get_data.sh install_aws_cli.sh /usr/local/bin/
 
 # Make the script executable
 RUN chmod +x /usr/local/bin/get_data.sh
+RUN bash /usr/local/bin/install_aws_cli.sh
 
 # Set the entrypoint to execute the bash script
 ENTRYPOINT ["/usr/local/bin/get_data.sh"]
