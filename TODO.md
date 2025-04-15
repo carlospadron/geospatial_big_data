@@ -1,0 +1,3 @@
+- add timestamp
+- test container with local machine 
+- add entry to "data to postgrsql" to readme
