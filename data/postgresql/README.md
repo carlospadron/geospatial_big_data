@@ -1,4 +1,4 @@
-# OSM to S3
+# OSM to Postgresql
 
 OSM files come in two formats, XML and PBF. PBF is binary and therefore smaller (80Gb vs 160GB for the full dataset). The files can be downloaded from a website https://planet.openstreetmap.org/ or straight from OSM S3 s3://osm-planet-eu-central-1/planet which is faster.
 In order to be used by databases and data warehouses, we can transform the PBF file into CSV which is universally adopted, store it in S3 and read it into the target platfform.
