@@ -1,11 +1,11 @@
 # OSM to Postgresql
 
-OSM files come in two formats, XML and PBF. PBF is binary and therefore smaller (80Gb vs 160GB for the full dataset). The files can be downloaded from a website https://planet.openstreetmap.org/ or straight from OSM S3 s3://osm-planet-eu-central-1/planet which is faster.
-In order to be used by databases and data warehouses, we can transform the PBF file into CSV which is universally adopted, store it in S3 and read it into the target platfform.
-The data can be filtered out using the tags https://wiki.openstreetmap.org/wiki/Tags . There are a few options to transform the PBF to another format OGR2OGR, Pyrosm, Osmium etc.
+Please read data  [overview](../README.md)
+There are a few options to read the PBF to postgresql OGR2OGR, Osmium etc.
+Please note that uploading OSM to Postgresql is a very slow process that takes hours or days.
 
 ## Process 
-To download OSM and store in S3 as CSV. You could either use EC2, ECS or your own machine if you have enough RAM, disk storage and network bandwith.
+To download OSM data and upload to Postgresql. You could either use EC2, ECS or your own machine if you have enough RAM, disk storage and network bandwith.
 
 ### prepare image
 build image ```sudo docker build -t geospatial_big_data .```
