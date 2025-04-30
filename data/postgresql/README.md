@@ -1,7 +1,7 @@
 # OSM to Postgresql
 
 Please read data  [overview](../README.md)
-There are a few options to read the PBF to postgresql OGR2OGR, Osmium etc.
+There are a few options to read the PBF to postgresql OGR2OGR, osm2pgsql, Osmium etc.
 Please note that uploading OSM to Postgresql is a very slow process that takes hours or days depending the size of the dataset.
 
 ## Folder content
