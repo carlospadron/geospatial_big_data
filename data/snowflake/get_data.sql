@@ -7,24 +7,23 @@ CREATE OR REPLACE STAGE osm_s3
   CREDENTIALS=(AWS_KEY_ID=$AWS_KEY_ID AWS_SECRET_KEY=$AWS_SECRET_KEY)
   ENCRYPTION=(TYPE='AWS_SSE_KMS' KMS_KEY_ID = 'aws/key');
 
-CREATE TABLE IF NOT EXISTS planet (
-  id BIGINT,
-  type STRING,
-  tags VARIANT,
-  lat DOUBLE PRECISION,
-  lon DOUBLE PRECISION,
-  nds ARRAY,
-  members ARRAY,
-  changeset BIGINT,
-  timestamp TIMESTAMP,
-  uid BIGINT,
-  user STRING,
-  version BIGINT,
-  visible BOOLEAN
-);
+CREATE OR REPLACE EXTERNAL TABLE planet (
+  id BIGINT AS (value:id::BIGINT),
+  type STRING AS (value:type::STRING),
+  tags VARIANT AS (value:tags),
+  lat DOUBLE PRECISION AS (value:lat::DOUBLE),
+  lon DOUBLE PRECISION AS (value:lon::DOUBLE),
+  nds ARRAY AS (value:nds::ARRAY),
+  members ARRAY AS (value:members::ARRAY),
+  changeset BIGINT AS (value:changeset::BIGINT),
+  timestamp TIMESTAMP AS (value:timestamp::TIMESTAMP),
+  uid BIGINT AS (value:uid::BIGINT),
+  user STRING AS (value:user::STRING),
+  version BIGINT AS (value:version::BIGINT),
+  visible BOOLEAN AS (value:visible::BOOLEAN)
+)
+LOCATION = @osm_s3
+FILE_FORMAT = (TYPE = ORC);
 
--- Copy data from the internal stage into the table
-COPY INTO planet
-FROM @osm_s3/planet-latest.orc
-FILE_FORMAT = (TYPE = ORC)
-MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+select * from planet
+limit 10;
