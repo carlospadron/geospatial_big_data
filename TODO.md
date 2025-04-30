@@ -1,3 +1,1 @@
-- add timestamp
-- test container with local machine 
-- add entry to "data to postgrsql" to readme
+- post (orc file is very small 5GB compared to 80GB for pbf or 160GB for XML)
