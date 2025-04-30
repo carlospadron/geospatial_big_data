@@ -5,7 +5,7 @@ current_time=$(date +"%Y-%m-%d %H:%M:%S")
 echo "Script started at: $current_time"
 
 # Download the OSM file in the format pbf
-aws s3 cp --no-sign-request s3://osm-pds/planet/planet-latest.osm.pbf .
+aws s3 cp --no-sign-request s3://osm-pds/planet-latest.osm.pbf .
 
 # You could also get the file from Geofabrik which has pbf per areas https://download.geofabrik.de/
 
