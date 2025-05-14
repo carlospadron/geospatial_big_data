@@ -13,8 +13,11 @@ You can install AWS cli by running:
 ```sh install_aws_cli.sh```
 You'll need to set it as well.
 
-## Snowsql
-Snowsql can be obtained here: https://www.snowflake.com/en/developers/downloads/snowsql/
+## Snowsql CLI
+Snowsql can be install via pip
+```pip install snowflake-cli```
+or 
+```pipenv install snowflake-cli```
 
 ## Process 
 ```
