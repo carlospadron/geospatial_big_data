@@ -9,6 +9,7 @@ snowsql -a $SNOWFLAKE_ACCOUNT \
     -u $SNOWFLAKE_USER  \
     -D AWS_KEY_ID=$AWS_KEY_ID \
     -D AWS_SECRET_KEY=$AWS_SECRET_KEY \
+    -D PRIVATE_S3_BUCKET=$private_s3_bucket \
     -o variable_substitution=true \
     -f create_stage.sql
 
