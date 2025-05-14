@@ -6,4 +6,5 @@ OSM data can be ingested to different platforms like Postgresql, Snowflake, Data
 
 Please refer to the right documentation for each platform.
 - [OSM to Postgresql](./postgresql/README.md)
+- [OSM to snowflake] (./snowflake/README.md)
 

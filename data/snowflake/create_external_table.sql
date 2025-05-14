@@ -13,5 +13,5 @@ CREATE OR REPLACE EXTERNAL TABLE planet_external (
   version BIGINT AS (value:version::BIGINT),
   visible BOOLEAN AS (value:visible::BOOLEAN)
 )
-LOCATION = @osm_s3
+LOCATION = @GIS.OSM.OSM
 FILE_FORMAT = (TYPE = ORC);
