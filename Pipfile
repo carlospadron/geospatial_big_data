@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 snowflake-snowpark-python = "*"
 ipykernel = "*"
+duckdb = "*"
 
 [dev-packages]
 
