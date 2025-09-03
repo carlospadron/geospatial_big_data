@@ -4,10 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pyspark = "==3.5.*"
 snowflake-snowpark-python = "*"
 ipykernel = "*"
 duckdb = "*"
 pandas = "*"
+apache-sedona = "*"
 
 [dev-packages]
 
